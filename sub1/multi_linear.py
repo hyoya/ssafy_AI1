@@ -54,18 +54,18 @@ https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearReg
 
 lrmodel = LinearRegression().fit(X_train, Y_train)
 
-### Req 1-2-2. 학습된 가중치 값 저장
-##beta_0 = None
-##beta_1 = None
-##beta_2 = None
-##beta_3 = None
-##
-##print("Scikit-learn의 결과물")
-##print("beta_0: %f" % beta_0)
-##print("beta_1: %f" % beta_1)
-##print("beta_2: %f" % beta_2)
-##print("beta_3: %f" % beta_3)
-##
+# Req 1-2-2. 학습된 가중치 값 저장
+beta_0 = lrmodel.coef_[0]
+beta_1 = lrmodel.coef_[1]
+beta_2 = lrmodel.coef_[2]
+​beta_3 = None
+
+print("Scikit-learn의 결과물")
+print("beta_0: %f" % beta_0)
+print("beta_1: %f" % beta_1)
+print("beta_2: %f" % beta_2)
+print("beta_3: %f" % beta_3)
+
 ### Req. 1-3-1.
 ### X_test_pred에 테스트 데이터에 대한 예상 판매량을 모두 구하여 len(y_test) X 1 의 크기를 갖는 열벡터에 저장합니다. 
 ##X_test_pred = None
