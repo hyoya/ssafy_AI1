@@ -79,9 +79,9 @@ https://scikit-learn.org/stable/index.html
 # Req. 1-3-2. Mean squared error 계산
 print("Mean squared error: %.2f" % mean_squared_error(Y_test, X_test_pred))
 
-### Req. 1-3-3. Variance score 계산
-##print("Variance score: %.2f" % None)
-##
+# Req. 1-3-3. Variance score 계산
+print("Variance score: %.2f" % r2_score(Y_test, X_test_pred))
+
 ### Req. 1-4-1. 
 ##def expected_sales(tv, rd, newspaper, beta_0, beta_1, beta_2, beta_3):
 ##    """
