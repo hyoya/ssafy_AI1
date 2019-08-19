@@ -20,7 +20,7 @@ Y는 Sales column 에 해당하는 데이터를 저장해야 합니다.
 X = np.zeros((200,3))
 Y = np.zeros((200,))
 
-f = open("advertising.csv", 'r', encoding='utf-8')
+f = open('advertising.csv', 'r', encoding='utf-8')
 rdr = csv.reader(f)
 for (idx, line) in enumerate(rdr):
     if idx == 0:
@@ -28,8 +28,7 @@ for (idx, line) in enumerate(rdr):
     X[idx-1][0] = float(line[1])
     X[idx-1][1] = float(line[2])
     X[idx-1][2] = float(line[3])
-    Y[idx-1] = float(line[4])​
-f.close()
+    Y[idx-1] = float(line[4])
 
 ##print("this is X")
 ##for x in :X
@@ -58,7 +57,7 @@ lrmodel = LinearRegression().fit(X_train, Y_train)
 beta_0 = lrmodel.coef_[0]
 beta_1 = lrmodel.coef_[1]
 beta_2 = lrmodel.coef_[2]
-​beta_3 = None
+beta_3 = lrmodel.intercept_
 
 print("Scikit-learn의 결과물")
 print("beta_0: %f" % beta_0)
@@ -66,10 +65,10 @@ print("beta_1: %f" % beta_1)
 print("beta_2: %f" % beta_2)
 print("beta_3: %f" % beta_3)
 
-### Req. 1-3-1.
-### X_test_pred에 테스트 데이터에 대한 예상 판매량을 모두 구하여 len(y_test) X 1 의 크기를 갖는 열벡터에 저장합니다. 
-##X_test_pred = None
-##
+# Req. 1-3-1.
+# X_test_pred에 테스트 데이터에 대한 예상 판매량을 모두 구하여 len(y_test) X 1 의 크기를 갖는 열벡터에 저장합니다. 
+X_test_pred = lrmodel.predict(X_test)
+
 ##"""
 ##Mean squared error값을 출력합니다.
 ##Variance score값을 출력합니다.
