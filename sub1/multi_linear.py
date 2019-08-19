@@ -17,21 +17,19 @@ Y는 Sales column 에 해당하는 데이터를 저장해야 합니다.
 """
 
 # Req 1-1-1. advertising.csv 데이터 읽고 저장
-X = []
-Y = []
+X = np.zeros((200,3))
+Y = np.zeros((200,))
 
 f = open("advertising.csv", 'r', encoding='utf-8')
 rdr = csv.reader(f)
-for line in rdr:
-    X.append([line[1], line[2], line[3]])
-    Y.append([line[4]])
+for (idx, line) in enumerate(rdr):
+    if idx == 0:
+        continue
+    X[idx-1][0] = float(line[1])
+    X[idx-1][1] = float(line[2])
+    X[idx-1][2] = float(line[3])
+    Y[idx-1] = float(line[4])​
 f.close()
-
-del X[0]
-del Y[0]
-
-X = np.array(X)
-Y = np.array(Y)
 
 ##print("this is X")
 ##for x in :X
@@ -42,20 +40,20 @@ Y = np.array(Y)
 ##    print(y)
 
 # Req 1-1-2. 학습용 데이터와 테스트용 데이터로 분리합니다.
-X_train, X_test, Y_train, Y_test = train_test_split(X,Y)
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y)
 
-##"""
-##Req 1-2-1.
-##LinearRegression()을 사용하여 학습합니다.
-##
-##이후 학습된 beta값들을 학습된 모델에서 입력 받습니다.
-##
-##참고 자료:
-##https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html
-##"""
-##
-##lrmodel = None
-##
+"""
+Req 1-2-1.
+LinearRegression()을 사용하여 학습합니다.
+
+이후 학습된 beta값들을 학습된 모델에서 입력 받습니다.
+
+참고 자료:
+https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html
+"""
+
+lrmodel = LinearRegression().fit(X_train, Y_train)
+
 ### Req 1-2-2. 학습된 가중치 값 저장
 ##beta_0 = None
 ##beta_1 = None
