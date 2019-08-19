@@ -17,9 +17,29 @@ Y는 Sales column 에 해당하는 데이터를 저장해야 합니다.
 """
 
 # Req 1-1-1. advertising.csv 데이터 읽고 저장
-##X = []
-##Y = []
+X = []
+Y = []
+
+f = open("advertising.csv", 'r', encoding='utf-8')
+rdr = csv.reader(f)
+for line in rdr:
+    X.append([line[1], line[2], line[3]])
+    Y.append([line[4]])
+f.close()
+
+del X[0]
+del Y[0]
+
+X = np.array(X)
+Y = np.array(Y)
+
+##print("this is X")
+##for x in X:
+##    print(x)
 ##
+##print("this is Y")
+##for y in Y:
+##    print(y)
 
 ### Req 1-1-2. 학습용 데이터와 테스트용 데이터로 분리합니다.
 ##X_train, X_test, Y_train, Y_test = train_test_split(None)
