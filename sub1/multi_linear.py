@@ -34,16 +34,16 @@ X = np.array(X)
 Y = np.array(Y)
 
 ##print("this is X")
-##for x in X:
+##for x in :X
 ##    print(x)
 ##
 ##print("this is Y")
 ##for y in Y:
 ##    print(y)
 
-### Req 1-1-2. 학습용 데이터와 테스트용 데이터로 분리합니다.
-##X_train, X_test, Y_train, Y_test = train_test_split(None)
-##
+# Req 1-1-2. 학습용 데이터와 테스트용 데이터로 분리합니다.
+X_train, X_test, Y_train, Y_test = train_test_split(X,Y)
+
 ##"""
 ##Req 1-2-1.
 ##LinearRegression()을 사용하여 학습합니다.
