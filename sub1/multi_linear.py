@@ -69,15 +69,16 @@ print("beta_3: %f" % beta_3)
 # X_test_pred에 테스트 데이터에 대한 예상 판매량을 모두 구하여 len(y_test) X 1 의 크기를 갖는 열벡터에 저장합니다. 
 X_test_pred = lrmodel.predict(X_test)
 
-##"""
-##Mean squared error값을 출력합니다.
-##Variance score값을 출력합니다.
-##
-##함수를 찾아 사용하여 봅니다.
-##https://scikit-learn.org/stable/index.html
-##"""
-### Req. 1-3-2. Mean squared error 계산
-##print("Mean squared error: %.2f" % None)
+"""
+Mean squared error값을 출력합니다.
+Variance score값을 출력합니다.
+
+함수를 찾아 사용하여 봅니다.
+https://scikit-learn.org/stable/index.html
+"""
+# Req. 1-3-2. Mean squared error 계산
+print("Mean squared error: %.2f" % mean_squared_error(Y_test, X_test_pred))
+
 ### Req. 1-3-3. Variance score 계산
 ##print("Variance score: %.2f" % None)
 ##
