@@ -107,6 +107,7 @@ with open("model.clf", "wb") as f: pickle.dump(lrmodel, f)
 
 with open("model.clf", "rb") as f : data = pickle.load(f)
 
+
 # Linear Regression Algorithm Part
 # 아래의 코드는 심화 과정이기에 사용하지 않는다면 주석 처리하고 실행합니다.
 
