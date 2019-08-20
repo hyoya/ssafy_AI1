@@ -82,15 +82,19 @@ print("Mean squared error: %.2f" % mean_squared_error(Y_test, X_test_pred))
 # Req. 1-3-3. Variance score 계산
 print("Variance score: %.2f" % r2_score(Y_test, X_test_pred))
 
-### Req. 1-4-1. 
-##def expected_sales(tv, rd, newspaper, beta_0, beta_1, beta_2, beta_3):
-##    """
-##    TV에 tv만큼, radio에 rd만큼, Newspaper에 newspaper 만큼의 광고비를 사용했고,
-##    트레이닝된 모델의 weight 들이 beta_0, beta_1, beta_2, beta_3 일 때
-##    예상되는 Sales 값을 출력합니다.
-##    """
-##   return 
-##
+
+rain 5:52 PM
+Untitled 
+# Req. 1-4-1.
+def expected_sales(tv, rd, newspaper, beta_0, beta_1, beta_2, beta_3):
+    """
+    TV에 tv만큼, radio에 rd만큼, Newspaper에 newspaper 만큼의 광고비를 사용했고,
+    트레이닝된 모델의 weight 들이 beta_0, beta_1, beta_2, beta_3 일 때
+    예상되는 Sales 값을 출력합니다.
+    """
+    print(lrmodel.predict([[tv, rd, newspaper]]))
+​    return tv * beta_0 + rd * beta_1 + newspaper * beta_2 + beta_3
+
 ### Req. 1-4-2.
 ### test 데이터에 있는 값을 직접적으로 넣어서 예상 판매량 값을 출력합니다.
 ##print("TV: {}, Radio: {}, Newspaper: {} 판매량: {}".format(
