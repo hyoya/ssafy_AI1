@@ -99,14 +99,17 @@ print("TV:{}, Radio:{}, Newspaper:{} 판매량:{}".format(X_test[3][0], X_test[3
 print("예상 판매량: {}".format(expected_sales(float(X_test[3][0]), float(X_test[3][1]), float(X_test[3][2]), beta_0, beta_1, beta_2, beta_3)))
 
 
-##"""
-##Req. 1-5. pickle로 lrmodel 데이터 저장
-##파일명: model.clf
-##"""
-##
-### Linear Regression Algorithm Part
-### 아래의 코드는 심화 과정이기에 사용하지 않는다면 주석 처리하고 실행합니다.
-##
+"""
+Req. 1-5. pickle로 lrmodel 데이터 저장
+파일명: model.clf
+"""
+with open("model.clf", "wb") as f: pickle.dump(lrmodel, f)
+
+
+
+# Linear Regression Algorithm Part
+# 아래의 코드는 심화 과정이기에 사용하지 않는다면 주석 처리하고 실행합니다.
+
 ##"""
 ##Req. 3-1-1.
 ##N_LinearRegression():
