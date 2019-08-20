@@ -83,8 +83,6 @@ print("Mean squared error: %.2f" % mean_squared_error(Y_test, X_test_pred))
 print("Variance score: %.2f" % r2_score(Y_test, X_test_pred))
 
 
-rain 5:52 PM
-Untitled 
 # Req. 1-4-1.
 def expected_sales(tv, rd, newspaper, beta_0, beta_1, beta_2, beta_3):
     """
@@ -92,17 +90,15 @@ def expected_sales(tv, rd, newspaper, beta_0, beta_1, beta_2, beta_3):
     트레이닝된 모델의 weight 들이 beta_0, beta_1, beta_2, beta_3 일 때
     예상되는 Sales 값을 출력합니다.
     """
-    print(lrmodel.predict([[tv, rd, newspaper]]))
-​    return tv * beta_0 + rd * beta_1 + newspaper * beta_2 + beta_3
+    return (tv*beta_0 + rd*beta_1 + newspaper*beta_2 + beta_3)
 
-### Req. 1-4-2.
-### test 데이터에 있는 값을 직접적으로 넣어서 예상 판매량 값을 출력합니다.
-##print("TV: {}, Radio: {}, Newspaper: {} 판매량: {}".format(
-##   X_test[3][0],X_test[3][1],X_test[3][2],Y_test[3]))
-##
-##print("예상 판매량: {}".format(expected_sales(
-##       float(X_test[3][1]),float(X_test[3][1]),float(X_test[3][2]), beta_0, beta_1, beta_2, beta_3)))
-##
+
+# Req. 1-4-2.
+# test 데이터에 있는 값을 직접적으로 넣어서 예상 판매량 값을 출력합니다.
+print("TV:{}, Radio:{}, Newspaper:{} 판매량:{}".format(X_test[3][0], X_test[3][1], X_test[3][2],Y_test[3]))
+print("예상 판매량: {}".format(expected_sales(float(X_test[3][0]), float(X_test[3][1]), float(X_test[3][2]), beta_0, beta_1, beta_2, beta_3)))
+
+
 ##"""
 ##Req. 1-5. pickle로 lrmodel 데이터 저장
 ##파일명: model.clf
