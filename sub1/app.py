@@ -6,8 +6,8 @@ from slack import WebClient
 from slackeventsapi import SlackEventAdapter
 
 
-SLACK_TOKEN = None
-SLACK_SIGNING_SECRET = None
+SLACK_TOKEN = "xoxb-732147613079-731598421525-ZFaN9ODMgK1G5CjgEgQDg2oB"
+SLACK_SIGNING_SECRET = "82c745be0a97984513f9d7ad407b6e37"
 
 app = Flask(__name__)
 
@@ -26,7 +26,8 @@ def lin_pred(test_str):
     beta_2 = data.coef_[2]
     beta_3 = data.intercept_
     ts = test_str.split(' ')
-    return (float(ts[0])*beta_0 + float(ts[1])*beta_1 + float(ts[2])*beta_2 + beta_3)
+    print(test_str)
+    return (float(ts[1])*beta_0 + float(ts[2])*beta_1 + float(ts[3])*beta_2 + beta_3)
 
 # 챗봇이 멘션을 받았을 경우
 @slack_events_adaptor.on("app_mention")
