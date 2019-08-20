@@ -1,13 +1,17 @@
 import pickle
 import numpy as np
+import os
 
 from flask import Flask
 from slack import WebClient
 from slackeventsapi import SlackEventAdapter
 
 
-SLACK_TOKEN = "xoxb-732147613079-731598421525-ZFaN9ODMgK1G5CjgEgQDg2oB"
-SLACK_SIGNING_SECRET = "82c745be0a97984513f9d7ad407b6e37"
+##SLACK_TOKEN = "xoxb-732147613079-731598421525-ZFaN9ODMgK1G5CjgEgQDg2oB"
+##SLACK_SIGNING_SECRET = "82c745be0a97984513f9d7ad407b6e37"
+
+SLACK_TOKEN = os.getenv("SLACK_TOKEN")
+SLACK_SIGNING_SECRET = os.getenv("SLACK_SIGNING_SECRET")
 
 app = Flask(__name__)
 
