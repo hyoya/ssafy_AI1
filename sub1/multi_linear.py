@@ -179,6 +179,13 @@ def gradient_beta(X,error,lr, beta_3):
     return beta_x_delta, beta_3_delta
 
 # N_LinearRegression 학습 파트
+
+# Req 3-2-4. challenge
+# 학습률(learning rate)를 설정합니다. (권장: 1e-3 ~ 1e-6)
+learning_rate = 1e-6
+# 반복 횟수(iteration)를 설정합니다. (자연수)
+iteration = 10000
+
 # Req. 3-2-1. 모델 학습
 N_beta_x, N_beta_3  = N_LinearRegression(X_test,Y_test,iteration)
 
