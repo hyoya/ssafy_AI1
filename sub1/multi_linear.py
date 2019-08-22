@@ -187,7 +187,7 @@ learning_rate = 1e-6
 iteration = 10000
 
 # Req. 3-2-1. 모델 학습
-N_beta_x, N_beta_3  = N_LinearRegression(X_test,Y_test,iteration)
+N_beta_x, N_beta_3  = N_LinearRegression(X_train,Y_train,iteration)
 
 # Req. 3-2-2. 학습된 가중치 저장
 print("\nN_LinearRegression의 결과물")
