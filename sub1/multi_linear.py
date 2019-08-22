@@ -162,3 +162,18 @@ def prediction(X, w, b):
     equation = X@w + b
     return equation.reshape(-1, 1)
     
+
+    """
+    Req. 3-1-3.
+    gradient_beta():
+    beta값에 해당되는 gradient값을 계산하고 learning rate를 곱하여 출력합니다.
+    """
+
+def gradient_beta(X,error,lr, beta_3):
+    # beta_x를 업데이트하는 규칙을 정의한다.
+    beta_x_delta =  lr/len(X) * np.sum(X * ( error ), axis=0 )
+    # beta_3를 업데이트하는 규칙을 정의한다.
+
+    beta_3_delta = lr/len(X) * np.sum(error, axis=0)
+    
+    return beta_x_delta, beta_3_delta
