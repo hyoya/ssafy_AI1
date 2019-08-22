@@ -181,3 +181,10 @@ def gradient_beta(X,error,lr, beta_3):
 # N_LinearRegression 학습 파트
 # Req. 3-2-1. 모델 학습
 N_beta_x, N_beta_3  = N_LinearRegression(X_test,Y_test,iteration)
+
+# Req. 3-2-2. 학습된 가중치 저장
+print("\nN_LinearRegression의 결과물")
+print("beta_0: %f" % N_beta_x[0])
+print("beta_1: %f" % N_beta_x[1])
+print("beta_2: %f" % N_beta_x[2])
+print("beta_3: %f" % N_beta_3)
