@@ -177,3 +177,7 @@ def gradient_beta(X,error,lr, beta_3):
     beta_3_delta = lr/len(X) * np.sum(error, axis=0)
     
     return beta_x_delta, beta_3_delta
+
+# N_LinearRegression 학습 파트
+# Req. 3-2-1. 모델 학습
+N_beta_x, N_beta_3  = N_LinearRegression(X_test,Y_test,iteration)
