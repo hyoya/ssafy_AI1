@@ -104,3 +104,48 @@ with open("model.clf", "wb") as f:
 
 # Linear Regression Algorithm Part
 # 아래의 코드는 심화 과정이기에 사용하지 않는다면 주석 처리하고 실행합니다.
+
+
+"""
+
+Req. 3-1-1.
+N_LinearRegression():
+
+Linear Regression 학습을 위한 알고리즘입니다.
+학습데이터와 반복횟수를 받아서 최적의 직선(평면)으로 근사하는 가중치 값을 리턴합니다.
+
+알고리즘 구성
+1) 가중치 값인 beta_x, beta_3 초기화
+2) Y label 데이터 reshape
+3) 가중치 업데이트 과정 (iters번 반복)
+3-1) prediction 함수를 사용하여 error 계산
+3-2) gadient_beta 함수를 사용하여 가중치 값 업데이트
+4) 가중치 값들 리턴
+
+"""
+
+def N_LinearRegression(X, Y, iters):
+
+    """
+    초기값 beta_0, beta_1, beta_2, beta_3 = 0
+    여러가지 초기값을 실험해봅니다..
+    초기값에 따라 iters간의 관계를 확인 가능합니다.
+    """
+
+    beta_x = np.array([1.0, 1.0, 1.0])
+    beta_3 = 3
+
+    #행렬 계산을 위하여 Y데이터의 사이즈를 (len(Y),1)로 저장합니다.
+    Y=Y.reshape(-1,1)
+
+    for i in range(iters):
+        #실제 값 y와 예측 값(prediction()함수를 사용)의 차이를 계산하여 error를 정의합니다.
+        pred = prediction(X,beta_x,beta_3)
+        error =  pred - Y
+        #gradient_beta함수를 통하여 델타값들을 업데이트 합니다.
+        beta_x_delta, beta_3_delta = gradient_beta(X,error,learning_rate, beta_3)
+        beta_x -= beta_x_delta
+        beta_3 -= beta_3_delta
+
+    return beta_x, beta_3
+
