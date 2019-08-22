@@ -149,3 +149,16 @@ def N_LinearRegression(X, Y, iters):
 
     return beta_x, beta_3
 
+
+"""
+Req. 3-1-2.
+prediction():
+beta값들을 받아서 예측값을 계산합니다.
+X행렬의 크기와 beta의 행렬 크기를 맞추어 계산합니다.
+"""
+    
+def prediction(X, w, b):
+    # 예측 값을 계산하는 식을 만든다.
+    equation = X@w + b
+    return equation.reshape(-1, 1)
+    
