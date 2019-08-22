@@ -195,3 +195,10 @@ print("beta_0: %f" % N_beta_x[0])
 print("beta_1: %f" % N_beta_x[1])
 print("beta_2: %f" % N_beta_x[2])
 print("beta_3: %f" % N_beta_3)
+
+
+# Req. 3-3-1. 테스트 데이터의 예측 label값 계산
+# X_test_pred에 테스트 데이터에 대한 예상 판매량을 모두 구하여 len(y_test) X 1 의 크기를 갖는 열벡터에 저장합니다.
+N_X_test_pred = prediction(X_test,N_beta_x,N_beta_3)
+
+
