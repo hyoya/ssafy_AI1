@@ -204,3 +204,6 @@ N_X_test_pred = prediction(X_test,N_beta_x,N_beta_3)
 
 # Req. 3-3-2. Mean squared error 계산
 print("Mean squared error: %.2f" % mean_squared_error(Y_test,N_X_test_pred) )
+
+# Req. 3-3-3. Variance score 계산
+print("Variance score: %.2f" % r2_score(Y_test,N_X_test_pred) )
