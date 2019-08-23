@@ -30,8 +30,11 @@ for (idx, line) in enumerate(rdr):
     X[idx-1][2] = float(line[3])
     Y[idx-1] = float(line[4])
 
+
 # Req 1-1-2. 학습용 데이터와 테스트용 데이터로 분리합니다.
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y)
+
+
 
 """
 Req 1-2-1.
@@ -184,7 +187,7 @@ def gradient_beta(X,error,lr, beta_3):
 # 학습률(learning rate)를 설정합니다. (권장: 1e-3 ~ 1e-6)
 learning_rate = 1e-6
 # 반복 횟수(iteration)를 설정합니다. (자연수)
-iteration = 10000
+iteration = 100000
 
 # Req. 3-2-1. 모델 학습
 N_beta_x, N_beta_3  = N_LinearRegression(X_train,Y_train,iteration)
